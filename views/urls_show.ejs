@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <% for (var key in shortURL) { %> <% }; %>
+    <p>Short URL: <%= shortURL %></p>
+    <form method="POST" action= "<%= `/urls/${shortURL}?_method=PUT` %>">
+      <input id="updatedLongURL" type="text" name="updatedLongURL" placeholder="Update your url">
+      <input type="submit" value="Update">
+    </form>
+
+</body>
+</html>

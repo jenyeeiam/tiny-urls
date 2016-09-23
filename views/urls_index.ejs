@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <header>
+        <% include ./partials/_header %>
+    </header>
+
+    <table>
+      <% for (var key in urls) { %>
+        <tr>
+          <td><a href= "<%= urls[key]%>"><%= `${key} -> ${urls[key]}` %></a></td>
+          <td>
+            <form method="POST" action = "<%= `/urls/${key}?_method=DELETE` %>">
+            <input type="submit" value="Delete">
+            </form>
+          </td>
+          <td>
+            <form method="GET" action = "<%= `/urls/${key}` %>">
+              <input type="submit" value="Update">
+            </form>
+          </td>
+        </tr>
+      <% }; %>
+    </table>
+
+
+</body>
+</html>
